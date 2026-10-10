@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Package Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav><div class="brand">✈ TripNest</div><a href="#packages">Packages</a><a href="#bookings">Bookings</a></nav>
+    <div class="hero-content">
+      <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+      <h1>Find a trip worth<br><span>remembering.</span></h1>
+      <p>Explore hand-picked travel packages for your next escape.</p>
+      <a class="primary-btn" href="#packages">Explore packages</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="packages">
+      <div class="section-heading"><div><p class="eyebrow">CURATED GETAWAYS</p><h2>Popular packages</h2></div>
+      <input id="search" type="search" placeholder="Search destination..." aria-label="Search packages"></div>
+      <div class="filters">
+        <button class="filter active" data-category="All">All trips</button>
+        <button class="filter" data-category="Beach">Beach</button>
+        <button class="filter" data-category="Mountain">Mountain</button>
+        <button class="filter" data-category="City">City</button>
+      </div>
+      <div id="packageGrid" class="package-grid"></div>
+    </section>
+
+    <section class="booking-section" id="bookings">
+      <div class="booking-copy"><p class="eyebrow">PLAN WITH EASE</p><h2>Book your next<br>great escape.</h2><p>Choose a package and send your booking request. Your selections are saved in this browser.</p></div>
+      <form id="bookingForm" class="booking-form">
+        <label>Full name<input name="name" required placeholder="Enter your name"></label>
+        <label>Email address<input name="email" type="email" required placeholder="you@example.com"></label>
+        <label>Travel package<select name="package" id="packageSelect" required><option value="">Choose a package</option></select></label>
+        <div class="form-row">
+          <label>Travel date<input name="date" type="date" id="travelDate" required></label>
+          <label>Travelers<input name="travelers" type="number" min="1" max="20" value="2" required></label>
+        </div>
+        <button class="primary-btn" type="submit">Submit booking request</button>
+        <p id="formMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section booking-list-section">
+      <div class="section-heading"><div><p class="eyebrow">YOUR TRIP PLANS</p><h2>Recent bookings</h2></div><button id="clearBookings" class="text-btn">Clear bookings</button></div>
+      <div id="bookingList"></div>
+    </section>
+  </main>
+  <footer><div class="brand">✈ TripNest</div><p>Demo travel package management system · Plan more, worry less.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
